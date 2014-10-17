@@ -101,7 +101,7 @@ public class ThreadPool<T> {
 	 * @return
 	 */
 	public int getCountInQueue() {
-		if(taskqueue==null)
+		if (taskqueue==null)
 			return 0;
 		return taskqueue.size();
 	}
@@ -111,17 +111,17 @@ public class ThreadPool<T> {
 	 * @return
 	 */
 	public int getTotleCount() {
-		if(taskqueue==null)
+		if (taskqueue==null)
 			return 0;
 		return count+taskqueue.size();
 	}
 
-	private void check() throws ExecutionException{
-		if(shutdown){
+	private void check() throws ExecutionException {
+		if (shutdown) {
 			throw new ExecutionException(new Exception("线程池已关闭"));
 		}
 	}
-	
+
 	private class PoolMoniter implements Runnable {
 		@Override
 		public void run() {
@@ -141,7 +141,7 @@ public class ThreadPool<T> {
 				/****清理执行完毕的线程****/
 				try {
 					Iterator<Future<T>> i = futures.iterator();
-					while(i.hasNext()){
+					while (i.hasNext()) {
 						Future<T> f = i.next();
 						if (!f.isDone())
 							continue;

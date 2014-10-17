@@ -4,7 +4,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
 import com.fsx.pool.ThreadPool;
-
+/**
+ * https://github.com/spoonFu/workspace.git
+ * @author FuShaoxing
+ *
+ */
 public class ThreadPoolTest {
 	public static void main(String[] args) {
 		ThreadPool<String> pool = new ThreadPool<String>(2);
